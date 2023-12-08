@@ -1,0 +1,142 @@
+/* static/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(.25turn, rgb(93, 160, 215), 10%, #b1b3c2);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #6c6a6a;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #4CAF50 3px solid;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight, header .current a {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #4CAF50;
+    
+}
+
+button, input[type="submit"], input[type="reset"] {
+    background-color: rgb(30, 117, 68);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 30%;
+}
+
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #4CAF50;
+}
+
+#delete-button {
+    color: rgb(255, 132, 0);
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-weight: bold;
+}
+
+th {
+    background-color: rgb(207, 225, 212);
+    color: rgb(58, 57, 57);
+}
+
+.middle-th {
+    color: rgb(145, 55, 229);
+}
+
+/* New style for table row links */
+table td a {
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+table td a:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Add additional styles as needed */

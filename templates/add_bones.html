@@ -1,0 +1,19 @@
+<!-- add_bone.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Bone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Add New Bone</h1>
+    <!-- Add New Bone Form -->
+    <form method="POST" action="{{ url_for('add_multiple') }}">
+        <label for="bones_data">Enter Bones Data:</label>
+        <textarea id="bones_data" name="bones_data" required placeholder="Format: name1,category1;name2,category2"></textarea>
+
+        <input type="submit" value="Add Bones">
+    </form>
+    <a href="{{ url_for('index') }}">Back to List</a>
+</body>
+</html>

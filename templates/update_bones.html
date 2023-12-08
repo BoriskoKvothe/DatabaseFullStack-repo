@@ -1,0 +1,23 @@
+<!-- update_bone.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Bone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Update Bone</h1>
+    <form method="POST">
+        <label for="name">Bone Name:</label>
+        <input type="text" id="name" name="name" value="{{ bone.name }}" required>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="neurocranium" {% if bone.category == 'neurocranium' %}selected{% endif %}>Neurocranium</option>
+            <option value="splanchnocranium" {% if bone.category == 'splanchnocranium' %}selected{% endif %}>Splanchnocranium</option>
+        </select>
+
+        <input type="submit" value="Update Bone">
+    </form>
+</body>
+</html>

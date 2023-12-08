@@ -1,0 +1,17 @@
+<!-- print_results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Printed Results for {{ criteria }}: {{ value }}</h1>
+    <ul>
+        {% for bone in bones %}
+        <li>{{ bone.name }} - {{ bone.category }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to List</a>
+</body>
+</html>

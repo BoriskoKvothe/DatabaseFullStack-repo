@@ -1,0 +1,25 @@
+<!-- search_bones.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Bones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Search Bones</h1>
+    <!-- Search Form -->
+    <form method="POST" action="{{ url_for('search') }}">
+        <label for="search_term">Search Term:</label>
+        <input type="text" id="search_term" name="search_term" required>
+
+        <label for="filter_option">Filter By:</label>
+        <select id="filter_option" name="filter_option">
+            <option value="name">Name</option>
+            <option value="category">Category</option>
+        </select>
+
+        <input type="submit" value="Search">
+    </form>
+    <a href="{{ url_for('index') }}">Back to List</a>
+</body>
+</html>

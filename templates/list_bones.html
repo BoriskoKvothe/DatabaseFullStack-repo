@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Cranial Bones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>List of Cranial Bones</h1>
+        <a href="{{ url_for('add_bone') }}">Add Bone</a>
+        
+        <!-- Search Form -->
+        <form method="POST" action="{{ url_for('search') }}">
+            <input type="text" name="search_term" placeholder="Search by name or category">
+            <input type="submit" value="Search">
+        </form>
+
+        <!-- Delete by Category Form -->
+        <form method="POST" action="{{ url_for('delete_by_category') }}">
+            <select name="category">
+                <option value="neurocranium">Neurocranium</option>
+                <option value="splanchnocranium">Splanchnocranium</option>
+            </select>
+            <input type="submit" value="Delete by Category">
+        </form>
+
+        <!-- Update by Category Form -->
+        <form method="POST" action="{{ url_for('update_by_category') }}">
+            <input type="text" name="old_category" placeholder="Old Category">
+            <input type="text" name="new_category" placeholder="New Category">
+            <input type="submit" value="Update Category">
+        </form>
+
+        <!-- Update Multiple and Batch Delete Form -->
+        <form method="POST" action="{{ url_for('update_multiple') }}">
+            <select name="new_category">
+                <option value="neurocranium">Neurocranium</option>
+                <option value="splanchnocranium">Splanchnocranium</option>
+            </select>
+            <input type="submit" value="Update Selected">
+
+            <input id="delete-button" type="submit" formaction="{{ url_for('delete_multiple') }}" value="Delete Selected" onclick="return confirm('Are you sure?');">
+            
+            <table>
+                <tr>
+                    <th>Select</th>
+                    <th><a class="middle-th" href="{{ url_for('index', sort='name', order='asc') }}">Bone Name</a>
+                        <a class="middle-th" href="{{ url_for('index', sort='name', order='desc') }}">&#9660;</a>
+                    </th>
+                    <th><a class="middle-th" href="{{ url_for('index', sort='category', order='asc') }}">Category</a>
+                        <a class="middle-th" href="{{ url_for('index', sort='category', order='desc') }}">&#9660;</a>
+                    </th>
+                    <th>Actions</th>
+                </tr>
+                {% for bone in bones %}
+                <tr>
+                    <td><input type="checkbox" name="selected_bones" value="{{ bone.boneID }}"></td>
+                    <td>{{ bone.name }}</td>
+                    <td>{{ bone.category }}</td>
+                    <td>
+                        <a href="{{ url_for('update_bone', bone_id=bone.boneID) }}">Edit</a>
+                        <a href="{{ url_for('delete_bone', bone_id=bone.boneID) }}" onclick="return confirm('Are you sure?');">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+</body>
+</html>
